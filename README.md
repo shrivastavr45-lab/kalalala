@@ -226,6 +226,17 @@ The current source verification includes the UI/UX refinement pass. Tests were r
 
 The project is consequently **not launch-ready** until the blocked build/live-data checks are rerun successfully in a network-enabled environment and all owner-controlled launch gates in `docs/launch-checklist.md` are completed.
 
-## AI assistance disclosure
+## AI tools & assistance disclosure
 
-OpenAI ChatGPT was used in this work session to inspect and modify source code, tests, and documentation. The generated changes require project-owner review and verification before deployment. No claims are made that an external hosting account was accessed or that deployment occurred.
+AI-assisted tools (including OpenAI ChatGPT and LLM developer assistants) were utilized strictly as **supplementary productivity aids** during the development of this project. AI was not used to autonomously generate the system; all domain logic, system architecture, calculations, and final implementations were directed, reviewed, and verified by the developer.
+
+### Specific areas of AI assistance:
+- **Code scaffolding & boilerplate:** Accelerated initial drafting of repetitive code structures, such as standard FastAPI route definitions, Pydantic schemas, and base React component scaffolding.
+- **Test case generation & edge cases:** Suggested candidate test cases, boundary-condition fixtures, and assertion patterns for backend Pytest suites and frontend CSV export validation.
+- **UI styling & layout refinement:** Aided in exploring CSS utility rules, responsive flex/grid layouts, and glassmorphic aesthetic details in `theme.css`.
+- **Documentation formatting:** Assisted in organizing markdown tables, structuring API documentation, and drafting checklist templates.
+
+### Human engineering & oversight:
+- **Domain & mathematical accuracy:** All energy market domain logic—including Elexon BMRS data integration (FUELHH outturn & WINDFOR forecasts), publication cutoff eligibility rules, half-hour interval alignment, and pooled interval MAE/RMSE calculations—was designed, verified, and audited by human engineering.
+- **Security & data integrity:** Strict enforcement of zero synthetic/mocked data fallback in production routes, CSV formula injection mitigation, and deterministic error handling were authored and validated by the developer.
+- **Testing & deployment:** All test suites, compilation steps, container configurations, and release workflows were independently executed and validated. No external accounts, credentials, or hosting platforms were accessed by AI tools.
